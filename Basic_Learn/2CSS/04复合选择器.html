@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 将class为red的div字体设置为30px */
+        div.red{
+            font-size: 30px;
+        }
+        .a.b.c{
+            color: dodgerblue;
+        }
+
+        h1,span{
+            color: fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">我是div</div>
+    <p class="red">我是p标签</p>
+    <div class="div2 a b c">我是div2</div>
+    <h1>h1</h1>
+    <span>span</span>
+</body>
+</html>
+
+<!-- 
+    交集选择器：
+        作用：选中同时符合多个条件的元素
+        语法：选择器1选择器2选择器3{}
+        注意点：
+            交集选择器中如果有元素选择器必须使用元素选择器开头
+
+    并集选择器：
+        作用：同时选择多个选择器对应的元素
+        语法：选择器1，选择器2，选择器3     
+        比如：.red,#child,div{}
+ -->

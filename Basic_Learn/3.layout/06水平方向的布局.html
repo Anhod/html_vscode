@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+
+        .inner{
+            /* width的值默认就是auto */
+            width: auto;
+            height: 200px;
+            background-color: #bfa;
+
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    元素的水平方向上的布局：
+        - 元素在其父元素中水平方向上的位置由以下几个属性共同决定：
+            margin-left
+            border-left
+            padding-left
+            width
+            padding-right
+            border-right
+            margin-right
+        
+        - 一个元素在其父元素中水平布局必须满足以下的等式：
+            margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 其父元素内容区宽度（必须满足）
+            （等式左边是子元素的值）
+                在这里：0 + 0 + 0 + 200 + 0 + 0 + 0 = 800
+
+            -- 如果相加结果等式不成立，则称为过度约束，则等式会自动调整
+                - 调整的情况：
+                    1.如果这七个值中没有auto的情况，则浏览器会自动调整magin-right值，使等式满足
+                        0 + 0 + 0 + 200 + 0 + 0 + 0 = 800   →  0 + 0 + 0 + 200 + 0 + 0 + 600 = 800
+                   
+                    2.这七个值中可以有三个值设置为auto：
+                        width
+                        magin-left
+                        magin-right
+                            ① 如果某个值为auto，则会自动调整为auto值以使等式成立
+                                0 + 0 + 0 + auto + 0 + 0 + 0 = 800  → auto = 800
+                            ② 如果将宽度和外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0
+                            ③ 如果将三个值都设置为auto，则width为最大，其他两个值为0
+                            ④ 如果将两个外边距设置为auto，宽度为固定值，则会将外边距设置为相同的值
+            
+            
+             
+            
+            
+ -->

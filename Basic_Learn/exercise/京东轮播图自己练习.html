@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东轮播图自己练习</title>
+
+    <link rel="stylesheet" href="../层叠样式表/reset.css">
+
+    <style>
+        /* 统一处理下图片 */
+        .img-list img{
+            display: block;
+            width: 590px;
+
+            
+        }
+
+        .img-list{
+            width: 590px;
+            height: 470px;
+
+            /* 居中一点显示 */
+            margin: 50px  auto;
+            
+            /* 开启相对定位，为什么不是绝对定位，因为开启绝对定位之后，ul脱离文档流
+                下面的元素会挤上来
+            */
+            position: relative;
+        }
+
+        .img-list li{
+            /* 设置绝对定位，脱离文档流，是图片叠在一起 */
+            position: absolute;
+        }
+
+        .img-list li:nth-child(7){
+            z-index: 1;
+        }
+
+
+        /* 设置导航点 */
+        /* 给div开启定位，而不是a开启定位，不然要一个一个设置导航点 */
+        .pointer{
+            position: absolute;
+           
+            z-index: 9999;
+
+            bottom: 15px;
+            left: 40px;
+
+        }
+
+        .pointer a{
+            float: left;
+            width: 10px;
+            height: 10px;   
+
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 50%;
+            margin: 0 4px;
+
+
+            /* 实际上这里理解有问题 */
+            /* 将背景颜色只设置到内容区，边框和内边距没有背景颜色 */
+            /* 应该是背景颜色会延伸到边框和内边距，所以这里设置一下 */
+            /* 因为背景颜色比边框颜色更深 */
+            background-clip: content-box;
+
+            /* 给每个a设置边框，其最终边框透明 */
+            /* 使导航点看起来一样大 */
+            border: 2px solid transparent;
+        }
+
+        /* 设置激活的点 */
+        .pointer a:hover,
+        .pointer .active{
+            border: 2px solid rgba(255, 255, 255, .3);
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./图片/4.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./图片/5.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./图片/6.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./图片/7.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./图片/8.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./图片/9.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./图片/10.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./图片/11.jpg" alt=""></a></li>
+
+        <div class="pointer">
+            <a href="javascript:;" class="active"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+</body>
+</html>

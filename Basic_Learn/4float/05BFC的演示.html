@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+            /* 设置浮动 */
+            float: left;
+
+            /* 开启BFC，子元素设置外边距它没影响 */
+            /* overflow: hidden; */
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* 开启元素的BFC，不会被浮动元素覆盖住（当1浮动时） */
+            overflow: hidden;   
+        }
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        
+        <div class="box3">3</div>
+    </div>
+    <div class="box2"></div>
+</body>
+</html>

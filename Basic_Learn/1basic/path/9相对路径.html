@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        当我们需要跳转到一个服务器内部的页面时，我们通常使用相对路径
+            -相对路径：通常使用.或..开头，比如./  ../ ,./可以省略不写，如果不屑./和../相当于写了./
+                ./表示当前文件所在的目录，在这里，当前页面就是9相对路径.html，所在当前目录就是path
+                ../表示当前文件的上一级目录
+     -->
+
+    <a href="./7列表.html">跳转到7列表，失败</a>
+    <br>
+    <a href="../7列表.html">跳转到7列表，成功</a> <!-- 上一级-->
+    <br>
+    <a href="./inner/target.html">我想找target</a> <!-- 下一级-->
+    <br>
+    <a href="../outer/target_outer.html">我是outer中的target</a> <!-- 同级-->
+</body>
+</html>

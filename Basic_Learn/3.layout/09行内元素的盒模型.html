@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .s1{
+            /* 行内元素设置高度宽度 */
+            width: 100px;
+            height: 100px;
+
+            /* 设置内边距，不会下面的元素挤下去，可能会盖住一些元素 */
+            /* padding: 100px; */
+            background-color: yellow;
+        }
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        a{
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color:violet;
+        }
+    </style>
+</head>
+<body>
+    <span class="s1">我是span</span>
+
+    <a href="javascript:;">超链接</a>
+
+    <div class="box1"></div>
+
+    
+</body>
+</html>
+
+
+<!-- 
+    行内元素
+        - 行内元素不支持设置高度和宽度
+        - 行内元素可以设置padding，但是垂直方向padding不会影响页面的布局
+        - 行内元素可以设置border，垂直方向上的border不会影响页面的布局
+        - 行内元素可以设置margin，垂直方向上的margin不会影响页面的布局
+            水平方向上的外边距会取和
+
+    display属性
+        - 用来设置元素显示的类型
+        - 可选值：
+            · inline 将元素设置为行内元素
+            · block 将元素设置为块元素
+            · inline-block 将元素设置为行内块元素，能不用尽量不用
+                特点是既可以设置宽度和高度，又不会独占一行
+            · table 将元素设置为表格
+            · none 元素不在页面中显示（不占位）
+        
+    visibility
+        - 用来设置元素的显示状态
+        - 可选值：
+            visible 默认值，元素在页面中正常显示
+            hidden 元素在页面中隐藏（依然会占位）
+ -->

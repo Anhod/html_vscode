@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 给没访问过的链接设置成红色 */
+        a:link{
+            color: red;
+        }
+
+        a:visited{
+            color: rosybrown;
+        }
+
+        a:hover{
+            color: skyblue;
+        }
+
+        a:active{
+            color: springgreen;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com" target="_blank">访问过的</a>
+
+    <br><br>
+
+    <a href="https://www.baidu123.com">没访问过的</a>
+
+</body>
+</html>
+
+<!-- 
+    :link  用来表示没访问过的链接（正常的链接）
+
+    :visited 表示访问过的链接
+        由于隐私的原因，在visited里加font-size并不会改变字体大小
+        所有visited只能修改链接的颜色
+    
+    :hover 表示鼠标移入的状态
+
+    :active 表示鼠标点击的状态
+
+    上面两种是超链接独有的，下面两种其他的元素也可以设置
+ -->

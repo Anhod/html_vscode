@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+
+        .box1::before{
+            content: "";
+
+            /* 可以隔开外边距,本身不占位置 */
+            display: table;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+
+            /* box1也会受到外边距的影响 */
+            margin-top: 100px;
+            float: left;
+        }
+        
+
+        /* clearfix类 */
+        .clearfix::before,
+        .clearfix::after{
+            /* 上边两行和before一对,解决外边距的重叠问题 */
+            /* 全部三行和after一对,解决高度塌陷问题,table也可以解决高度塌陷 */
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

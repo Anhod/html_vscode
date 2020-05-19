@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1,.box2{
+            width: 200px;
+            height: 200px;
+        }
+
+        .box1{
+            background-color: #bfa;
+            /* 设置下外边距 */
+            margin-bottom: 100px;
+        }
+
+        .box2{
+            background-color: sandybrown;
+            /* 设置上外边距 */
+            margin-top: 100px;
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+            /* padding-top: 100px; */
+        }
+
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+
+            /* margin-top: 100px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box1"></div>
+    <div class="box2"></div> -->
+
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    垂直外边距的折叠
+        - 相邻的垂直方向外边距会发生折叠
+        - 兄弟元素
+            - 兄弟元素之间的相邻垂直外边距会取两种之间的较大值 （两者都是正值）
+            - 特殊情况
+                1.如果相邻的外边距一正一负，则取两者的和
+                2.如果相邻的外边距都是负值，则取两者中绝对值最大的
+            - 兄弟元素之间的垂直外边距的重叠对开发是有利的，所以我们不需要处理
+        
+        - 父子元素
+            - 父子元素之间的相邻外边距,子元素的会传递给父元素(上外边距)
+            - 父子外边距的折叠会影响到页面中的布局,必须要进行处理
+
+ -->

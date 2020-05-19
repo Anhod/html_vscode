@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            为div的子元素span设置字体颜色（直接包含）
+        */
+        div>span{
+            color: fuchsia;
+        }
+
+        /* div中的所有span设置颜色 */
+        div span{
+            color: blue;
+        }
+
+        /* 选择p元素的下一个兄弟元素 */
+        p+span{
+            color: rebeccapurple;
+        }
+
+        /* 选择p元素后的所有span元素 */
+        p~span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我是一个div
+
+        <p>
+            我是div中的p元素
+            <span>我是p标签中的span</span>
+        </p>
+        <span>我是div中的span1元素</span>
+        <span>我是div中的span2元素</span>
+        <span>我是div中的span3元素</span>
+    </div>
+
+    <span>我是和div同级的span</span>
+</body>
+</html>
+
+<!-- 
+    子元素选择器：
+        作用：选中指定父元素的指定子元素
+        语法：父元素>子元素
+    
+    后代选择器
+        作用：选中指定元素内的指定后代元素
+        语法：祖先 后代
+    
+    兄弟选择器
+      1.选择下一个兄弟元素
+        语法：前一个+后一个
+        注意：只看下一个，如果下一个元素不是span，则接下来的span也不会发生变化
+        
+      2.选择下边所有的兄弟元素。
+        语法：兄~弟
+        后边不是弟元素的元素自动忽略
+ -->

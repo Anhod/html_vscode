@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p::first-letter{
+            font-size: 20px;
+        }
+
+        p::first-line{
+            background-color: aqua;
+        }
+
+        p::selection{
+            background-color: burlywood;
+        }
+
+        div::before{
+            content: "abc";
+            color: crimson;
+        }
+
+        div::after{
+            content: "haha";
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div>Hello,how are you</div>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi autem delectus, consequatur eaque, quos vel reiciendis, voluptatum placeat quidem omnis voluptatem magni exercitationem doloremque quibusdam! Nobis vero amet quisquam maxime.</p>
+</body>
+</html>
+
+<!-- 
+    伪元素，表示页面中一些特殊的并不真实的存在的元素(特殊的位置)，
+        使用::开头
+
+        ::first-letter   表示第一个字母
+        ::first-line     表示第一行
+        ::selection      表示选中的内容（在页面上浏览的时候）
+        
+        ::before         表示元素的开始位置
+        ::after          表示元素的最后位置
+            这两种伪元素必须结合content属性使用,在开发中经常使用
+
+ -->

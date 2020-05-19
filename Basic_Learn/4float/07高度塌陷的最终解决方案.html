@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            border: 1px #666 solid;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+
+            float: left;
+        }
+
+        .box1::after{
+            content: "";
+
+            /* 转换为块元素 */
+            display: block;
+
+            /* 清除两侧的浮动,所以浮动的元素对它的位置没有影响 */
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
