@@ -4,6 +4,7 @@ body{
     font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino
 }
 
+/* 解决高度塌陷 */
 .clear-fix::before,
 .clear-fix::after{
     content: "";
@@ -17,10 +18,12 @@ body{
     background-color: rgb(227,228,229);
     height: 29px;
 
-    /* 给父元素设置行高 */
+    /* 给父元素设置行高，子元素在父元素行高里居中显示 */
     line-height: 30px;
+
     border-bottom: 1px solid #ddd;
 
+    /* 开启相对定位，不能开启绝对定位哦 */
     position: relative;
 }
 
@@ -34,10 +37,10 @@ body{
 }
 
 /* 设置字体样式 */
+.location a,
 .shortcut a,
 .shortcut span,
-.shortcut i,
-.location a{
+.shortcut i{
     color: #999;
     text-decoration: none;
 }
@@ -60,6 +63,7 @@ body{
 }
 
 .current-city{
+    /* 可以利用此形成一个小盒子，有左右间距 */
     padding: 0 10px;
     position: relative;
 
@@ -80,13 +84,11 @@ body{
     border: 1px solid rgb(204, 202, 202);
     display: none;
 
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
     /* 设置绝对定位，使其不占页面位置 */
     /* 为什么不用调位置，因为它不会超过其上边的未浮动的兄弟元素 */
     position: absolute;
     top: 30px;
-
-    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
-
     z-index: 99;
 }
 
