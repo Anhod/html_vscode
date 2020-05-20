@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+
+            overflow: auto;
+            background-color: #bfa;
+
+            background-image: url(./img/2.jpg);
+            background-repeat: no-repeat;
+
+            /* 边框下也会有背景颜色 */
+            /* background-clip: content-box; */
+            /* background-origin:content-box; */
+
+            background-size: 100px 100px;
+        }
+
+        .box2{
+            width: 300px;
+            height: 1000px;
+            background-color: orange;
+
+            background-image: url(./img/1.png);
+            background-repeat: no-repeat;
+            
+            background-attachment:fixed;
+        }
+
+        .box3{
+            width: 300px;
+            height: 300px;
+
+           
+            background:#bfa url(./img/2.jpg) center center/contain no-repeat ;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box1">
+        <div class="box2"></div>
+    </div> -->
+
+    <div class="box3"></div>
+</body>
+</html>
+
+<!-- 
+    总结
+        background-color
+        background-image
+        background-repeat
+        background-position
+        background-size
+        background-origin
+        background-clip
+        background-attachment
+            
+        - background 背景相关的简写属性，所有背景相关的样式都可以通过该样式来设置
+            并且该样式没有顺序要求，也没有哪个属性是必须写的
+        注意点：
+            1.background-size必须写在background-position后边，中间用/隔开
+            2.background-origin必须写在background-clip前边
+ -->
+
+<!-- 
+    background-clip   设置背景的范围
+        可选值：
+            1.border-box 默认值，背景会出现在边框的下边
+            2.padding-box 背景不会出现在边框中，只会出现在内容区和内边距
+            3.content-box 表示背景只会出现在内容区
+    
+    background-origin 背景图片的偏移量计算
+        可选值：
+            1.padding-box 默认值，background-position从内边距处开始计算
+            2.content-box 背景图片从内容区处计算
+            3.border-box 背景图片从边框处计算
+    
+    background-size 设置背景图片的大小
+        第一个值表示宽度，第二个值表示高度
+        - 如果只写一个值，则第二个值默认是auto，等比例缩放
+
+        可选值：
+            cover 图片比例不变，将元素铺满
+            contain 图片比例不变，将图片在元素中完整显示
+    
+    background-attachment 设置图片是否跟随元素移动
+        可选值：
+            scroll 默认值，背景图片跟随元素移动
+            fixed 背景图片固定在页面中，不会随元素移动
+
+ -->
