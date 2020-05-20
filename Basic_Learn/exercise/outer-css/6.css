@@ -142,10 +142,8 @@ body{
 }
 
 .item a{
-    display: block;
-    height: 100%;
-
-    padding: 0 11px;
+    /* 形成可以hover的盒子 */
+    padding: 5px 11px;
 }
 
 .item a:hover{
