@@ -1,0 +1,162 @@
+body{
+    /* 设置字体 */
+    color: #999;
+    font: 12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino
+}
+
+.clear-fix::before,
+.clear-fix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 设置外部容器的样式 */
+.top-bar-wrapper{
+    width: 100%;
+    background-color: rgb(227,228,229);
+    height: 29px;
+
+    /* 给父元素设置行高 */
+    line-height: 30px;
+    border-bottom: 1px solid #ddd;
+
+    position: relative;
+}
+
+/* 设置内部容器样式 */
+.top-bar{
+    /* 固定宽度 */
+    width: 1190px;
+
+    /* 整个容器水平居中 */
+    margin: 0 auto;
+}
+
+/* 设置字体样式 */
+.shortcut a,
+.shortcut span,
+.shortcut i,
+.location a{
+    color: #999;
+    text-decoration: none;
+}
+
+.shortcut a:hover,
+.location a:hover,
+.top-bar .highlight,
+.current-city:hover a{
+    color: #f10215;
+}
+
+/* 设置位置 */
+.location{
+    float: left;
+}
+
+/* 当鼠标移入location时，让city-list显示 */
+.location:hover .city-list{
+    display: block; 
+}
+
+.current-city{
+    padding: 0 10px;
+    position: relative;
+
+    /* 鼠标移入的时候，若不加这个，会导致北京这两个字移动，因为我们加了边框 */
+    /* 所以干脆直接把边框加上 */
+    border: 1px solid transparent;
+    border-bottom: none;
+
+    z-index: 999;
+}
+
+/* 设置城市列表下拉框 */
+.city-list{
+    width: 320px;
+    height: 436px;
+    background-color: white;
+
+    border: 1px solid rgb(204, 202, 202);
+    display: none;
+
+    /* 设置绝对定位，使其不占页面位置 */
+    /* 为什么不用调位置，因为它不会超过其上边的未浮动的兄弟元素 */
+    position: absolute;
+    top: 30px;
+
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+
+    z-index: 99;
+}
+
+/* 设置current-city的移入的效果，为了使交界处的边框消失，让current-city的边框盖住city-list的边框 */
+.location:hover .current-city{
+    background-color: white;
+
+    border: 1px solid rgb(204, 202, 202);
+    border-bottom: none;
+}
+
+/* 设置location下的小图标 */
+.fas{
+    font-size: 13px;
+    color: #f10215;
+}
+
+/* 设置其他导航条 */
+.shortcut{
+    float: right;
+}
+
+/* 设置li */
+.shortcut li{
+    float: left;
+}
+
+/* 设置分割线 */
+.shortcut .line{
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+
+    margin: 10px 12px 0;
+}
+
+/* 设置下拉框内部内容 */
+/* 首先设置成是的盒子的大小与下拉框盒子之间的左上外边距 */
+.city-block{
+    width: 328px;
+    height: 320px;
+    
+    margin-top: 8px;    
+}
+
+/* 让div浮动 */
+.item{
+    float: left;
+    
+    margin: 0 8px;
+}
+
+.item a{
+    display: block;
+    height: 100%;
+
+    padding: 0 11px;
+}
+
+.item a:hover{
+    color: #f10215;
+    background-color: rgba(224,224,224,.5);
+}
+
+.city-block div:nth-child(12),
+.city-block div:nth-child(35){
+    margin-left: -3px;
+}
+
+.city-block div:nth-child(18) a{
+    color: white;
+    background-color: #f10215;
+}
