@@ -9,7 +9,74 @@
     <link rel="stylesheet" href="./font_awesome/css/all.css">
 
     <style>
+        /* 设置外层容器 */
+        .outer{
+            width: 240px;
+            margin:  100px auto;
 
+            box-shadow: 0 0 10px rgba(0, 0, 0,.5);
+        }
+
+        /* 设置图片 */
+        .img-wrapper{
+            width: 100%;
+
+            /* 设置基线对齐 */
+            vertical-align: bottom;
+        }
+
+        .info{
+            padding: 0 18px;
+        }
+
+        .info .title{
+            color: #717171;
+            font-size: 18px;
+            margin: 13px 0 15px 0;
+        }
+
+        .info .category{
+            color: #acaaaa;
+            font-size: 13px;
+        }
+
+        .info .category i{
+            margin-left: 4px;
+            margin-right: 7px;
+        }
+
+        /* 设置简介信息 */
+        .intro{
+            color: #acaaaa;
+            font-size: 13px;
+
+            margin: 18px 4px;
+
+            line-height: 20px;
+        }
+
+        /* 设置下边内容 */
+        .star-wrapper{
+            height:  46px;
+            border-top: 1px solid rgb(233, 233, 233);
+            line-height: 46px;
+
+            color:  #ddd;
+            padding: 0 16px;
+        }
+
+        /* 设置星星 */
+        .star-wrapper .star{
+            float: left;
+        }
+
+        .star-wrapper .weibo{
+            float: right;
+        }
+
+        .star .light{
+            color: #b9cb41;
+        }
     </style>
 </head>
 <body>
@@ -27,6 +94,7 @@
             </h2>
 
             <h3 class="category">
+                <i class="fas fa-map-marker-alt"></i>
                 Animations
             </h3>
 
@@ -38,7 +106,16 @@
         <!-- 创建评分容器 -->
         <div class="star-wrapper">
             <!-- 创建星星 -->
-             
+             <ul class="star">
+                 <li class="fas fa-star light"></li>
+                 <li class="fas fa-star light"></li>
+                 <li class="fas fa-star"></li>
+                 <li class="fas fa-star"></li>
+             </ul>
+
+             <ul class="weibo">
+                 <li class="fab fa-weibo"></li>
+             </ul>
         </div>
     </div>
 </body>

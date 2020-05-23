@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影卡片练习</title>
+
+    <link rel="stylesheet" href="../层叠样式表/reset.css">
+    <link rel="stylesheet" href="./font_awesome/css/all.css">
+
+    <style>
+        /* 设置外部容器 */
+        .outer{
+            width: 240px;
+            margin: 100px auto;
+
+            box-shadow: 0 0 10px rgba(0 , 0, 0, .5);
+        }
+
+        /* 设置图片 */
+        .img-wrapper img{
+            vertical-align: bottom;
+        }
+
+        /* 设置标题容器 */
+        .info-wrapper{
+            /* 设置左右内边距 */
+            padding-left:  18px;
+
+        }
+
+        /* 设置二级标题 */
+        .info-title{
+            color: #717171;
+            font-size: 18px;
+
+            margin-top: 17px;
+            margin-bottom: 14px;
+        }
+
+        /* 设置三级容器 */
+        .category{
+            color: #acaaaa;
+            font-size: 13px;
+            
+            
+        }
+
+        .category i{
+            margin-left: 4px;
+            margin-right: 7px;
+        }
+
+        /* 设置介绍性文字 */
+        .intro{
+            line-height: 20px;
+
+            color: #acaaaa;
+            font-size: 13px;
+
+            margin: 18px 0 19px 4px;
+        }
+
+        /* 设置星星容器 */
+        .star-wrapper{
+            height: 46px;
+
+            border-top: 1px solid rgb(233, 233, 233);
+            line-height: 47px;
+
+            color: rgb(221, 221, 221);
+
+            padding:  0 33px 0 16px; 
+        }
+
+        .star-list{
+            float: left;
+            
+        }
+
+        .weibo{
+            float: right;
+        }
+
+        .light{
+            color: #b9cb41;
+        }
+    </style>
+</head>
+<body>
+    <!-- 创建外部容器 -->
+    <div class="outer">
+        <!-- 图片容器 -->
+        <div class="img-wrapper">
+            <img src="./图片/boy.png" alt="">
+        </div>
+
+        <!-- 标题容器 -->
+        <div class="info-wrapper">
+            <h2 class="info-title">Animation films</h2>
+           
+            <h3 class="category">
+                <i class="fas fa-map-marker-alt"></i>
+                Movies
+            </h3>
+
+            <p class="intro">
+                Lorem ipsum is simple dummy text of the printing & typesetting industry.
+            </p>
+        </div>
+
+        <div class="star-wrapper">
+            <ul class="star-list">
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star "></li>
+            </ul>
+
+            <ul class="weibo">
+                <li class="fab fa-weibo"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
