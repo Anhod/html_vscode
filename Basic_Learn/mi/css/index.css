@@ -36,6 +36,10 @@
 }
 
 /* 设置右侧导航条 */
+.shop-cart{
+    position: relative;
+}
+
 .shop-cart,
 .user-info{
     float: right;
@@ -63,7 +67,10 @@
 /* 设置二维码下拉框 */
 .app .qrcode{
     width: 124px;
-    height: 148px;  
+ 
+    /* 使元素隐藏 */
+    height: 0;
+    overflow: hidden;
 
     background-color: #fff;
 
@@ -72,6 +79,13 @@
     text-align: center;
 
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+
+    position: absolute;
+    left: -40px;
+
+    /* 用于为样式设置过渡效果 */
+    transition: height .4s;
+    z-index: 1;
 }
 
 /* 设置二维码图片 */
@@ -87,3 +101,259 @@
     color: #000;
     font-size: 15px;
 }
+
+/* 给app开启相对定位 */
+.app{
+    position: relative;
+}
+
+/* 移入标签时显示二维码 */
+.app-wrapper:hover .app .qrcode{
+    /* display: block; */
+    height: 148px;
+}
+
+/* 设置app下的小三角，当鼠标移入的时候它才显示，才设置这个小三角 */
+.app-wrapper:hover .app::after{
+    content: '';
+    width: 0;
+    height: 0;
+
+    border:6px solid transparent;
+
+    border-top: none;
+    border-bottom-color:#fff ;
+
+    /* 开启绝对定位 */
+    position: absolute;
+
+    bottom: 0 ;
+
+    /* 设置居中 */
+    right: 0 ;
+    left: 0;
+    margin: auto;
+}
+
+/* 这种写法也可以使三角和二维码显示出来 */
+/* .app:hover .qrcode,
+.app:hover::after{
+    display: block;
+} */
+
+/* 设置购物车的下拉效果 */
+.shop-cart .shop-cart-info{
+    width: 316px;
+    height: 0;
+    overflow: hidden;
+    line-height: 1;
+
+    background-color: #fff;
+    box-shadow: 2px 4px 3px rgba(0, 0, 0, .1);
+    position: absolute;
+
+    top: 40px;
+    left: -170px;
+
+    text-align: center;
+
+    transition: height .4s;
+
+    z-index: 1;
+}
+
+.shop-cart .shop-cart-info span{
+    font-size: 12px;
+    display: block;
+
+    margin-top: 40px;
+}
+
+.shop-cart:hover .shop-cart-info{
+    height: 98px;
+}
+
+
+
+/* 设置中间的header */
+.header-wrapper{
+    position: relative;
+}
+
+.header{
+    height: 100px;
+
+}
+
+/* 设置logo容器 */
+.header .logo{
+    position: relative;
+    float: left;
+    margin-top: 22px;
+
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+
+    /* 隐藏 “小米官网” 文字，设置缩进 */
+    text-indent: -9999px;
+}
+
+/* 设置容器中的a标签,以及专场效果 */
+.header .logo a{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+
+    left: 0;
+
+    background-color: #ff6700;
+    background-image: url(../img/mi-logo.png);
+    background-position: center;
+
+    transition: left .3s;
+}
+
+.header .logo .home{
+    background-image: url(../img/mi-home.png);
+    left: -55px;
+}
+
+.header .logo:hover .mi{
+    left: 55px ;
+}
+
+.header .logo:hover .home{
+    left: 0;
+}
+
+/* 设置中间导航条 */
+.header .nav-wrapper{
+    float: left;
+    margin-left: 7px;
+}
+
+/* 设置导航条中的li */
+.nav-wrapper li{
+    float: left;
+}
+
+/* 设置导航条 */
+.header .nav{
+    width: 792px;
+    line-height: 100px;
+    padding-left: 58px;
+
+}
+
+/* 设置超链接 */
+.nav-wrapper li a{
+    display: block;
+    color: #000;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.nav-wrapper li a:hover{
+    color: #ff6700;
+}
+
+/* 隐藏全部商品 */
+.all-goods{
+    /* 需要占位 */
+    visibility: hidden;
+}
+
+.nav .goods-info{
+    /* 宽度是包含块的百分之百，此时是header-wrapper */
+    width: 100%;
+    height:0px;
+    overflow: hidden;
+    background-color: #fff;
+
+    position: absolute;
+
+    top: 100px;
+    left: 0;
+
+    transition: height .3s;
+}
+
+/* 兄弟元素选择器，选择所有的li，打开的面板是一样的 */
+/* .nav li:not(:first-of-type):not(:nth-child(9)):not(:nth-child(10)):hover~.goods-info, */
+.nav .show-goods:hover~.goods-info,
+.goods-info:hover{
+    height: 228px;
+
+    border-top: 1px solid rgb(224,224,224);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, .1);
+}
+
+/* 外围容器 */
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+
+    float: right;
+    margin-top: 25px;
+}
+
+/* 设置搜索框 */
+.search-wrapper .search-inp{
+    box-sizing: border-box;
+    float: left;
+    padding: 0;
+    width: 244px;
+    height: 50px;
+
+    border: none;
+    padding: 0 10px;
+
+    font-size: 16px;    
+    border:1px solid rgb(224, 224, 224) ;
+    outline: none;
+
+    /* 鼠标移入边框颜色改，并设定时间 */
+    transition: border-color .3s;
+}
+
+/* 搜索按钮 */
+.search-wrapper .search-btn{
+    float: left;
+
+    width: 52px;
+    height: 50px;
+
+    padding: 0;
+    border: none;
+
+    background-color: #fff;
+    color: #616161;
+    font-size: 17px;
+
+    border:1px solid rgb(224, 224, 224) ;
+    border-left: none;
+
+    /* 鼠标移入边框颜色改，并设定时间 */
+    transition: border-color .3s;
+}
+
+/* 鼠标移入边框改变，要写在获取焦点之前，否则会发生覆盖（优先级） */
+.search-wrapper  .search-inp:hover,
+.search-wrapper  .search-inp:hover+button{
+    border-color: rgb(176, 176, 176);
+}
+
+/* 设置input获取焦点之后的样式 */
+.search-wrapper  .search-inp:focus,
+.search-wrapper  .search-inp:focus+button{
+    border-color: #ff6700;
+}
+
+/* 鼠标移入搜索按钮颜色改变 */
+.search-wrapper .search-btn:hover{
+    background-color: #ff6700;
+    color: #fff;
+    border: none;
+}
+
